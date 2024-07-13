@@ -106,19 +106,19 @@ const App = () => {
     }
   };
 
-  const handleBuy = async price => {
-    //const quantity = calculateQuantity(price);
-    await console.log(`купив по ${price}`);
-    setBuyPrice(price);
-    setMinPrice(null); // Reset the minPrice after buying
-  };
-
   // const handleBuy = async price => {
-  //   const quantity = calculateQuantity(price);
-  //   await placeOrder('BUY', price, quantity);
+  //   //const quantity = calculateQuantity(price);
+  //   await console.log(`купив по ${price}`);
   //   setBuyPrice(price);
   //   setMinPrice(null); // Reset the minPrice after buying
   // };
+
+  const handleBuy = async price => {
+    const quantity = calculateQuantity(price);
+    await placeOrder('BUY', price, quantity);
+    setBuyPrice(price);
+    setMinPrice(null); // Reset the minPrice after buying
+  };
 
   useEffect(() => {
     if (isMonitoring) {
