@@ -117,7 +117,7 @@ const App = () => {
       clearInterval(intervalRef.current);
     }
     return () => clearInterval(intervalRef.current);
-  }, [isMonitoring]);
+  });
 
   return (
     <div>
