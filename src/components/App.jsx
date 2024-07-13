@@ -6,7 +6,7 @@ const App = () => {
   const [currentPrice, setCurrentPrice] = useState(null);
   const [initialPrice, setInitialPrice] = useState(null);
   const [minPrice, setMinPrice] = useState(null);
-  const [buyPrice, setBuyPrice] = useState(null);
+  // const [buyPrice, setBuyPrice] = useState(null);
   const intervalRef = useRef(null);
 
   const fetchPrice = async () => {
@@ -27,12 +27,12 @@ const App = () => {
       await new Promise(resolve => setTimeout(resolve, 0));
 
       // Your logic here
-      if (buyPrice) {
-        // monitorForSell(price);
-      } else if (minPrice && price >= minPrice * 1.02) {
-        // Example condition
-        // handleBuy(price);
-      }
+      // if (buyPrice) {
+      //   // monitorForSell(price);
+      // } else if (minPrice && price >= minPrice * 1.02) {
+      //   // Example condition
+      //   // handleBuy(price);
+      // }
     } catch (error) {
       console.error('Error fetching price:', error);
     }
@@ -43,7 +43,7 @@ const App = () => {
     intervalRef.current = setInterval(fetchPrice, 5000);
     console.log('use');
     return () => clearInterval(intervalRef.current);
-  }, []);
+  });
 
   return (
     <div>
