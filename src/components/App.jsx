@@ -199,7 +199,7 @@ const App = () => {
         <p>Поточна ціна: {currentPrice}</p>
 
         <p>Мінімальна ціна: {minPrice}</p>
-
+        <p>Прогнозована ціна викупу: {minPrice * (1 + buyThreshold / 100)}</p>
         <p>Ціна купівлі: {buyPrice}</p>
 
         <p>Остання ціна продажу: {lastSellPrice}</p>
