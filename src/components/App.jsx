@@ -64,7 +64,7 @@ const App = () => {
       price,
       newOrderRespType: 'ACK',
       recvWindow: 60000,
-      timestamp: Date.now(),
+      //timestamp: Date.now(),
       apiKey: apiKey,
     };
 
