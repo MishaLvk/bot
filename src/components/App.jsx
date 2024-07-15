@@ -64,8 +64,8 @@ const App = () => {
       // price,
       //newOrderRespType: 'ACK',
       //recvWindow: 60000,
-      //timestamp: Date.now(),
-      apiKey: apiKey,
+      timestamp: Date.now(),
+      //apiKey: apiKey,
     };
 
     const queryString = new URLSearchParams(params).toString();
