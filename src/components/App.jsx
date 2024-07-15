@@ -59,11 +59,11 @@ const App = () => {
       symbol,
       side, // Це буде 'SELL' для продажу
       type: 'LIMIT',
-      timeInForce: 'GTC',
-      quantity,
-      price,
-      newOrderRespType: 'ACK',
-      recvWindow: 60000,
+      // timeInForce: 'GTC',
+      // quantity,
+      // price,
+      //newOrderRespType: 'ACK',
+      //recvWindow: 60000,
       //timestamp: Date.now(),
       apiKey: apiKey,
     };
