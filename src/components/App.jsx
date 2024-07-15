@@ -52,21 +52,23 @@ const App = () => {
     }
   };
 
-  const calculateQuantity = price => usdtAmount / price;
+  const calculateQuantity = price => (usdtAmount / price).toFixed(8);
 
   const placeOrder = async (side, price, quantity) => {
-    const data = {
+    const params = {
       symbol,
-      side,
+      side, // Це буде 'SELL' для продажу
       type: 'LIMIT',
       timeInForce: 'GTC',
       quantity,
       price,
+      newOrderRespType: 'ACK',
       recvWindow: 60000,
       timestamp: Date.now(),
+      apiKey: apiKey,
     };
 
-    const queryString = new URLSearchParams(data).toString();
+    const queryString = new URLSearchParams(params).toString();
     const signature = crypto.HmacSHA256(queryString, apiSecret).toString();
 
     const response = await axios.post(
